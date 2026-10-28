@@ -60,6 +60,7 @@ p{margin:0}
 .hdfold>summary::-webkit-details-marker{display:none}
 .hdfold>.lede{margin-top:4px}
 .lede{max-width:68ch;color:var(--ink2);font-size:16.5px;margin-top:10px}
+.wrap>header>.lede:first-child{margin-top:0}
 .lede q,.quote{font-family:var(--serif);font-style:italic}
 a{color:var(--accent)}
 button,select,input{font:inherit;color:inherit}
@@ -638,14 +639,14 @@ i.tl-sw{display:inline-block;width:9px;height:9px;border-radius:50%;background:v
 .brand img{display:block;height:38px;width:auto;max-width:120px;filter:brightness(0) invert(1);opacity:.95}
 .brand-text{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-style:italic;font-size:24px;line-height:1;white-space:nowrap;color:#fff}
 .brand-text small{display:block;font-family:"Lato","Helvetica Neue",Arial,sans-serif;font-style:normal;font-size:10.5px;font-weight:400;letter-spacing:.12em;color:rgba(255,255,255,.85);margin-top:5px}
-.mast .tool{display:flex;align-items:baseline;gap:12px;min-width:0}
-.mast .tool .name{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-style:italic;font-size:27px;line-height:1;white-space:nowrap;text-decoration:none}
-.mast .tool .tagline{font-size:12.5px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mast .tool{display:flex;align-items:baseline;gap:12px;min-width:0;flex:1 1 auto}
+.mast .tool .name{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;font-size:27px;line-height:1;white-space:nowrap;margin:0;letter-spacing:0;color:#fff}
+.mast .tool .tagline{font-size:13px;line-height:1.3;color:rgba(255,255,255,.85);max-width:46ch;text-wrap:balance}
 .mast .dev{margin-left:auto;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;line-height:1.2;font-size:12.5px;color:#fff;white-space:nowrap;text-align:right}
 .mast .dev-k{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 .mast .dev-ai{font-size:11px;color:rgba(255,255,255,.7)}
 @media (max-width:1180px){.mast .dev-ai{display:none}}
-@media (max-width:980px){.mast .tool .tagline{display:none}}
+@media (max-width:980px){.mast .tool{flex-wrap:wrap;gap:2px 12px}.mast .tool .tagline{max-width:none}}
 @media (max-width:760px){.mast{gap:8px 14px;padding:8px 14px;flex-wrap:wrap}.brand{padding-right:12px}.brand img{height:30px}.brand-text{font-size:20px}.mast .tool .name{font-size:22px}.mast .dev{font-size:11.5px}}
 @media (max-width:560px){.mast .dev{margin-left:0;width:100%;align-items:flex-start;text-align:left;border-top:1px solid rgba(255,255,255,.25);padding-top:6px;white-space:normal}}
 </style>
@@ -654,14 +655,11 @@ i.tl-sw{display:inline-block;width:9px;height:9px;border-radius:50%;background:v
     <img src="https://www.bibliotecanacional.gov.co/Assets/mapoteca/img/logos/logo-mapoteca.svg" alt="" hidden onload="this.hidden=false" onerror="this.hidden=true">
     <span class="brand-text">Mapoteca<small>Biblioteca Nacional de Colombia</small></span>
   </a>
-  <div class="tool"><span class="name">Itinerario</span><span class="tagline">Atlas de la Provincia de Cartagena según la Geografía histórica de Nieto (1839)</span></div>
+  <div class="tool"><h1 class="name">Itinerario</h1><span class="tagline">Atlas de la Provincia de Cartagena según la <i>Geografía histórica</i> de Juan José Nieto (1839)</span></div>
   <span class="dev" title="Concepción, diseño, fuentes y validación: Sebastián Díaz Ángel; desarrollo asistido por IA (Claude)"><span class="dev-k">Concepción, diseño, fuentes y validación</span>Sebastián Díaz Ángel <span class="dev-ai">· desarrollo asistido por IA (Claude)</span></span>
 </header>
 <div class="wrap">
   <header>
-    <p class="kicker">Mapoteca Digital · Biblioteca Nacional de Colombia</p>
-    <h1>Itinerario</h1>
-    <p class="subtitle">Atlas de la Provincia de Cartagena según la <i>Geografía histórica</i> de Juan José Nieto (1839)</p>
     <p class="lede">La <i>Geografía histórica, estadística y local de la Provincia de Cartagena</i> (1839) de Juan José Nieto es la primera geografía regional publicada en Colombia y una obra corográfica en el sentido antiguo: describe la provincia cantón por cantón y pueblo por pueblo, con sus habitantes, sus fundaciones, sus cultivos y oficios, sus autoridades, sus juicios sobre la gente y un itinerario de las leguas que «se caminan» desde la capital hasta 111 lugares. Pero se imprimió sin un solo mapa.</p>
     <p class="lede">Este atlas interactivo es la apuesta de darle con herramientas de hoy la cartografía que nunca tuvo: no ilustrar el libro, sino leerlo sobre el territorio, poniendo cada frase en su lugar, contando lo que Nieto enumera, midiendo lo que él estimó en leguas y confrontando sus palabras con los mapas que sí existían (López 1787, Talledo 1820, la Carta del Magdalena de 1827 y Santamaría 1852) y con el relieve y los ríos de ahora.</p>
     <details class="hdfold"><summary>Cómo funciona</summary><p class="lede">El contenido del libro está desglosado en <span id="nLamLede">29</span> láminas agrupadas en nueve temas (qué lugares hay, cuándo y quién los fundó, quién vivía allí, de qué vivían, quién mandaba, cómo los juzga Nieto, cuánto se tardaba en llegar, qué dibujaron los mapas antiguos y cómo es el territorio hoy). Cada lámina se enciende sobre el mapa base que se elija y se suma a las demás: un punto lleva hasta tres capas de color, y las de caminos, ríos y relieve dibujan líneas e imágenes encima. A un lado van la leyenda y los gráficos de cada lámina encendida, enlazados con el mapa en los dos sentidos: el cursor sobre una barra resalta sus lugares y el cursor sobre un lugar marca sus barras. Cada punto abre su ficha, con lo que la lámina lee de ese pueblo, la frase de Nieto que lo respalda subrayada, su página y el texto completo de su cantón. El Itinerario convierte las leguas en tiempo de viaje a pie, en burro o a caballo, con la legua ajustable y cuatro maneras de calcular las bandas, incluida la red de caminos del mapa de Talledo sobre el terreno real; los mapas antiguos georreferenciados pueden ponerse de fondo con la opacidad que se quiera.</p></details>
